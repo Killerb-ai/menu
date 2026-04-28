@@ -168,10 +168,10 @@
     }
     .footer a { color: var(--text-3); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.12); }
 
-    /* 원본 이미지 링크 버튼 */
+    /* 원본 이미지 링크 + 새로고침 버튼 */
     .img-link-row {
       width: 100%; max-width: 600px;
-      display: flex; justify-content: flex-end;
+      display: flex; justify-content: flex-end; gap: 8px;
       margin-bottom: 20px;
     }
     .img-link-btn {
@@ -196,6 +196,28 @@
       opacity: .7;
     }
     .img-link-btn:hover svg { opacity: 1; }
+    .refresh-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: all .15s;
+      flex-shrink: 0;
+    }
+    .refresh-btn:hover {
+      background: var(--surface2);
+      color: var(--accent);
+      border-color: rgba(154,112,64,.3);
+    }
+    .refresh-btn svg { opacity: .7; transition: opacity .15s; }
+    .refresh-btn:hover svg { opacity: 1; }
+    .refresh-btn.spinning svg {
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
     .footer a:hover { color: var(--accent); }
 
     @media (max-width: 480px) {
@@ -229,6 +251,12 @@
     </svg>
     원본 메뉴판 보기
   </a>
+  <button id="refresh-btn" class="refresh-btn" title="최신 메뉴로 새로고침" onclick="forceRefresh()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"/>
+      <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+    </svg>
+  </button>
 </div>
 
 <div class="summary">
@@ -404,6 +432,20 @@
         });
     }
   })();
+
+  // ── 수동 새로고침 (캐시 완전 무시) ──
+  function forceRefresh() {
+    var btn = document.getElementById('refresh-btn');
+    btn.classList.add('spinning');
+    fetch(location.pathname + '?nocache=' + Date.now(), { cache: 'no-store' })
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        document.open('text/html');
+        document.write(html);
+        document.close();
+      })
+      .catch(function() { location.reload(true); });
+  }
 
   // ── 날짜 표시 & 칼로리 합산 ──
   const DAYS = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
