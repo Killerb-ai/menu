@@ -376,6 +376,20 @@
 </div>
 
 <script>
+  // ── 캐시 무력화: URL에 오늘 날짜(?v=YYYYMMDD)가 없으면 리다이렉트 ──
+  (function() {
+    const today = new Date();
+    const dateStr = today.getFullYear() +
+      String(today.getMonth() + 1).padStart(2, '0') +
+      String(today.getDate()).padStart(2, '0');
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('v') !== dateStr) {
+      url.searchParams.set('v', dateStr);
+      window.location.replace(url.toString());
+    }
+  })();
+
+  // ── 날짜 표시 & 칼로리 합산 ──
   const DAYS = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
   const now = new Date();
   document.getElementById('today-date').textContent =
