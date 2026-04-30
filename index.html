@@ -36,101 +36,52 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-      width: 100%;
-      max-width: 600px;
-    }
-    .label {
-      font-size: 11px; font-weight: 500;
-      letter-spacing: .3em; color: var(--accent);
-      text-transform: uppercase; margin-bottom: 12px;
-    }
-    h1 {
-      font-size: clamp(22px, 5vw, 30px);
-      font-weight: 300; letter-spacing: -.02em; line-height: 1.2;
-    }
+    .header { text-align: center; margin-bottom: 40px; width: 100%; max-width: 600px; }
+    .label  { font-size: 11px; font-weight: 500; letter-spacing: .3em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+    h1      { font-size: clamp(22px, 5vw, 30px); font-weight: 300; letter-spacing: -.02em; line-height: 1.2; }
     h1 strong { font-weight: 700; color: var(--accent-light); }
-    .divider {
-      width: 36px; height: 1px;
-      background: var(--accent); opacity: .45;
-      margin: 18px auto 0;
-    }
+    .divider  { width: 36px; height: 1px; background: var(--accent); opacity: .45; margin: 18px auto 0; }
 
-    .meta-row {
-      display: flex; gap: 10px; flex-wrap: wrap;
-      justify-content: center; margin-bottom: 32px;
-    }
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
     .pill {
       display: inline-flex; align-items: center; gap: 7px;
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 100px; padding: 7px 16px;
       font-size: 12.5px; color: var(--text-2);
     }
-    .pill .dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--accent); flex-shrink: 0;
-    }
+    .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-    .time-note {
-      width: 100%; max-width: 600px;
-      text-align: center; font-size: 11.5px;
-      color: var(--text-3); margin-bottom: 38px;
-    }
+    .time-note { width: 100%; max-width: 600px; text-align: center; font-size: 11.5px; color: var(--text-3); margin-bottom: 38px; }
 
-    /* 원본 이미지 링크 + 새로고침 버튼 */
-    .img-link-row {
-      width: 100%; max-width: 600px;
-      display: flex; justify-content: flex-end; gap: 8px;
-      margin-bottom: 20px;
-    }
+    .img-link-row { width: 100%; max-width: 600px; display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 20px; }
     .img-link-btn {
       display: inline-flex; align-items: center; gap: 6px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 7px 16px;
-      font-size: 12px; font-weight: 500;
-      color: var(--text-2);
-      text-decoration: none;
-      transition: all .15s;
-      cursor: pointer;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 7px 16px;
+      font-size: 12px; font-weight: 500; color: var(--text-2);
+      text-decoration: none; transition: all .15s; cursor: pointer;
     }
-    .img-link-btn:hover {
-      background: var(--surface2);
-      color: var(--accent);
-      border-color: rgba(154,112,64,.3);
-    }
+    .img-link-btn:hover { background: var(--surface2); color: var(--accent); border-color: rgba(154,112,64,.3); }
     .img-link-btn svg { flex-shrink: 0; opacity: .7; }
     .img-link-btn:hover svg { opacity: 1; }
 
     .refresh-btn {
       display: inline-flex; align-items: center; justify-content: center;
       width: 34px; height: 34px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      color: var(--text-2);
-      cursor: pointer;
-      transition: all .15s;
-      flex-shrink: 0;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; color: var(--text-2);
+      cursor: pointer; transition: all .15s; flex-shrink: 0;
     }
-    .refresh-btn:hover {
-      background: var(--surface2);
-      color: var(--accent);
-      border-color: rgba(154,112,64,.3);
-    }
-    .refresh-btn svg { opacity: .7; transition: opacity .15s; }
+    .refresh-btn:hover { background: var(--surface2); color: var(--accent); border-color: rgba(154,112,64,.3); }
+    .refresh-btn svg { opacity: .7; }
     .refresh-btn:hover svg { opacity: 1; }
     .refresh-btn.spinning svg { animation: spin .7s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── 로딩 상태 ── */
+    /* 로딩 */
     .loading-box {
       width: 100%; max-width: 600px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      display: flex; flex-direction: column; align-items: center;
       padding: 72px 0; gap: 18px;
     }
     .spinner {
@@ -140,81 +91,42 @@
       border-radius: 50%;
       animation: spin .85s linear infinite;
     }
-    .loading-text { font-size: 13px; color: var(--text-3); letter-spacing: .02em; }
+    .loading-text { font-size: 13px; color: var(--text-3); }
 
-    /* ── 메뉴 이미지 (카카오스토리에서 동적 로드) ── */
-    .menu-img-box {
+    /* 날짜 불일치 배너 */
+    .stale-banner {
       width: 100%; max-width: 600px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 16px;
-    }
-    .menu-img-box img {
-      width: 100%; display: block;
-    }
-    .fresh-badge {
-      display: flex; align-items: center; gap: 6px;
-      width: 100%; max-width: 600px;
-      font-size: 11px; color: var(--text-3);
-      margin-bottom: 28px; padding-left: 4px;
-    }
-    .fresh-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: #4caf50; flex-shrink: 0;
+      background: #fff8e6; border: 1px solid #e8c84a;
+      border-radius: 12px; padding: 12px 18px;
+      font-size: 12px; color: #7a6010;
+      margin-bottom: 18px;
+      display: flex; align-items: center; gap: 10px;
     }
 
-    /* ── 오류/폴백 안내 ── */
-    .error-notice {
-      width: 100%; max-width: 600px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 24px;
-      font-size: 12.5px; color: var(--text-2);
-      margin-bottom: 22px;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    }
-    .error-notice a {
-      color: var(--accent); text-decoration: none;
-      font-weight: 500; white-space: nowrap;
-    }
-    .error-notice a:hover { text-decoration: underline; }
-
-    /* ── 폴백 메뉴 카드 ── */
+    /* 요약 */
     .summary {
       width: 100%; max-width: 600px;
-      background: var(--accent-glow);
-      border: 1px solid rgba(201,169,110,.2);
-      border-radius: 14px;
-      padding: 16px 22px;
+      background: var(--accent-glow); border: 1px solid rgba(201,169,110,.2);
+      border-radius: 14px; padding: 16px 22px;
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 28px;
     }
     .summary-label { font-size: 11.5px; color: var(--text-2); letter-spacing: .05em; }
-    .summary-value {
-      font-size: 20px; font-weight: 700;
-      color: var(--accent-light); letter-spacing: -.02em;
-    }
+    .summary-value { font-size: 20px; font-weight: 700; color: var(--accent-light); letter-spacing: -.02em; }
     .summary-value span { font-size: 12px; font-weight: 400; color: var(--text-2); margin-left: 2px; }
 
+    /* 섹션 & 카드 */
     .section {
       width: 100%; max-width: 600px;
-      font-size: 10.5px; font-weight: 600;
-      letter-spacing: .22em; color: var(--text-3);
-      text-transform: uppercase;
+      font-size: 10.5px; font-weight: 600; letter-spacing: .22em;
+      color: var(--text-3); text-transform: uppercase;
       margin-bottom: 10px; padding-left: 2px;
     }
-
     .block {
       width: 100%; max-width: 600px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden; margin-bottom: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden; margin-bottom: 12px;
     }
-
     .row {
       display: flex; align-items: center;
       padding: 14px 18px; gap: 14px;
@@ -225,45 +137,36 @@
     .row:hover { background: var(--surface2); }
 
     .thumb {
-      width: 64px; height: 64px;
-      border-radius: 12px; overflow: hidden;
-      flex-shrink: 0; background: var(--surface2);
-      position: relative;
+      width: 64px; height: 64px; border-radius: 12px; overflow: hidden;
+      flex-shrink: 0; background: var(--surface2); position: relative;
     }
-    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .thumb .fb {
       position: absolute; inset: 0;
-      display: none; align-items: center;
-      justify-content: center; font-size: 28px;
+      display: flex; align-items: center; justify-content: center; font-size: 28px;
     }
-    .thumb img.err { display: none; }
-    .thumb img.err ~ .fb { display: flex; }
-
     .info { flex: 1; min-width: 0; }
     .name { font-size: 14.5px; font-weight: 500; color: var(--text-1); line-height: 1.3; }
     .sub  { font-size: 11.5px; color: var(--text-2); margin-top: 2px; }
-
-    .right {
-      display: flex; flex-direction: column;
-      align-items: flex-end; gap: 6px; flex-shrink: 0;
-    }
+    .right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
     .kcal { font-size: 12px; font-weight: 600; color: var(--cal-color); letter-spacing: .02em; }
     .kcal span { font-size: 10px; font-weight: 400; opacity: .75; }
-    .tag {
-      font-size: 9.5px; font-weight: 700;
-      letter-spacing: .12em; text-transform: uppercase;
-      padding: 2px 8px; border-radius: 100px;
-    }
+    .tag { font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 2px 8px; border-radius: 100px; }
     .t-soup   { background:#cce8f5; color:#1a5f7a; }
     .t-main   { background:#ead5f0; color:#6a208a; }
     .t-side   { background:#d5edcf; color:#2a6a2a; }
     .t-kimchi { background:#f5d0d0; color:#8a2020; }
     .t-drink  { background:#f0e8c8; color:#6a5010; }
 
-    .footer {
-      margin-top: 44px; text-align: center;
-      font-size: 11.5px; color: var(--text-3); line-height: 1.8;
+    /* 오류 */
+    .error-box {
+      width: 100%; max-width: 600px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 24px;
+      text-align: center; font-size: 13px; color: var(--text-2);
     }
+    .error-box a { color: var(--accent); font-weight: 500; }
+
+    .footer { margin-top: 44px; text-align: center; font-size: 11.5px; color: var(--text-3); line-height: 1.8; }
     .footer a { color: var(--text-3); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.12); }
     .footer a:hover { color: var(--accent); }
 
@@ -277,7 +180,6 @@
 </head>
 <body>
 
-<!-- 헤더 -->
 <div class="header">
   <div class="label">두산벤처다임</div>
   <h1>구내식당<strong> 오늘의 메뉴</strong></h1>
@@ -288,126 +190,47 @@
   <div class="pill"><span class="dot"></span><span id="today-date">로딩 중…</span></div>
   <div class="pill">점심 11:10–14:20 &nbsp;·&nbsp; 저녁 17:00–18:50</div>
 </div>
-<p class="time-note">※ 금요일은 점심만 운영합니다</p>
+<p class="time-note" id="time-note">※ 금요일은 점심만 운영합니다</p>
 
-<!-- 링크 / 새로고침 -->
 <div class="img-link-row">
-  <a class="img-link-btn" href="https://story.kakao.com/bebe41" target="_blank" rel="noopener" title="카카오스토리 원본 보기">
+  <a class="img-link-btn" href="https://story.kakao.com/bebe41" target="_blank" rel="noopener">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-      <circle cx="8.5" cy="8.5" r="1.5"/>
-      <polyline points="21 15 16 10 5 21"/>
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
     </svg>
     원본 메뉴판 보기
   </a>
-  <button id="refresh-btn" class="refresh-btn" title="최신 메뉴로 새로고침" onclick="refresh()">
+  <button id="refresh-btn" class="refresh-btn" title="새로고침" onclick="refresh()">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="23 4 23 10 17 10"/>
-      <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+      <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
     </svg>
   </button>
 </div>
 
-<!-- ① 로딩 중 -->
+<!-- 로딩 -->
 <div id="loading-box" class="loading-box">
   <div class="spinner"></div>
-  <div class="loading-text">카카오스토리에서 오늘의 메뉴를 불러오는 중…</div>
+  <div class="loading-text">메뉴를 불러오는 중…</div>
 </div>
 
-<!-- ② 성공: 카카오스토리 이미지 -->
-<div id="menu-img-box" class="menu-img-box" style="display:none">
-  <img id="menu-img" src="" alt="오늘의 메뉴" onerror="onImgError()"/>
-</div>
-<div id="fresh-badge" class="fresh-badge" style="display:none">
-  <span class="fresh-dot"></span>
-  <span id="fetch-time"></span>
+<!-- 날짜 불일치 배너 -->
+<div id="stale-banner" class="stale-banner" style="display:none">
+  ⚠️ &nbsp;아직 오늘 메뉴가 등록되지 않았습니다. 가장 최근 메뉴를 표시합니다.
 </div>
 
-<!-- ③ 실패: 안내 메시지 -->
-<div id="error-notice" class="error-notice" style="display:none">
-  <span>자동으로 메뉴를 불러오지 못했습니다. 카카오스토리에서 직접 확인해 주세요.</span>
-  <a href="https://story.kakao.com/bebe41" target="_blank" rel="noopener">바로가기 →</a>
-</div>
-
-<!-- ③-b 폴백: 마지막으로 저장된 메뉴 (이미지 로드 실패 시 표시) -->
-<div id="menu-fallback" style="display:none">
-
+<!-- 동적 메뉴 컨테이너 -->
+<div id="menu-wrap" style="display:none; width:100%; display:none; flex-direction:column; align-items:center;">
   <div class="summary">
     <div class="summary-label">한 끼 예상 칼로리 (전체)</div>
     <div class="summary-value" id="total-kcal">—<span>kcal</span></div>
   </div>
+  <div id="menu-content"></div>
+</div>
 
-  <!-- 국 -->
-  <div class="section">국 / 찌개</div>
-  <div class="block">
-    <div class="row" data-kcal="70">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🍲</span></div>
-      <div class="info"><div class="name">새우젓김칫국</div></div>
-      <div class="right"><div class="kcal">70<span>kcal</span></div><span class="tag t-soup">국</span></div>
-    </div>
-  </div>
-
-  <!-- 메인 -->
-  <div class="section">메인</div>
-  <div class="block">
-    <div class="row" data-kcal="390">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🍗</span></div>
-      <div class="info"><div class="name">후라이드치킨</div><div class="sub">강정 소스</div></div>
-      <div class="right"><div class="kcal">390<span>kcal</span></div><span class="tag t-main">메인</span></div>
-    </div>
-    <div class="row" data-kcal="420">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🍛</span></div>
-      <div class="info"><div class="name">하이라이스</div></div>
-      <div class="right"><div class="kcal">420<span>kcal</span></div><span class="tag t-main">메인</span></div>
-    </div>
-  </div>
-
-  <!-- 반찬 -->
-  <div class="section">반찬</div>
-  <div class="block">
-    <div class="row" data-kcal="130">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🥩</span></div>
-      <div class="info"><div class="name">비엔나야채볶음</div></div>
-      <div class="right"><div class="kcal">130<span>kcal</span></div><span class="tag t-side">반찬</span></div>
-    </div>
-    <div class="row" data-kcal="75">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🥗</span></div>
-      <div class="info"><div class="name">양배추샐러드</div><div class="sub">키위 드레싱</div></div>
-      <div class="right"><div class="kcal">75<span>kcal</span></div><span class="tag t-side">반찬</span></div>
-    </div>
-    <div class="row" data-kcal="35">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🥬</span></div>
-      <div class="info"><div class="name">쑥갓매실무침</div></div>
-      <div class="right"><div class="kcal">35<span>kcal</span></div><span class="tag t-side">반찬</span></div>
-    </div>
-    <div class="row" data-kcal="30">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🥬</span></div>
-      <div class="info"><div class="name">단무지무침</div></div>
-      <div class="right"><div class="kcal">30<span>kcal</span></div><span class="tag t-side">반찬</span></div>
-    </div>
-    <div class="row" data-kcal="25">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🌶️</span></div>
-      <div class="info"><div class="name">포기김치</div></div>
-      <div class="right"><div class="kcal">25<span>kcal</span></div><span class="tag t-kimchi">김치</span></div>
-    </div>
-  </div>
-
-  <!-- 음료 -->
-  <div class="section">음료</div>
-  <div class="block">
-    <div class="row" data-kcal="55">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🫖</span></div>
-      <div class="info"><div class="name">복숭아홍차</div></div>
-      <div class="right"><div class="kcal">55<span>kcal</span></div><span class="tag t-drink">음료</span></div>
-    </div>
-    <div class="row" data-kcal="110">
-      <div class="thumb"><img src="" alt="" onerror="this.classList.add('err')"/><span class="fb">🍞</span></div>
-      <div class="info"><div class="name">건빵튀김</div></div>
-      <div class="right"><div class="kcal">110<span>kcal</span></div><span class="tag t-drink">후식</span></div>
-    </div>
-  </div>
-
-</div><!-- /menu-fallback -->
+<!-- 오류 -->
+<div id="error-box" class="error-box" style="display:none">
+  메뉴 파일을 불러오지 못했습니다.<br><br>
+  <a href="https://story.kakao.com/bebe41" target="_blank" rel="noopener">카카오스토리에서 직접 확인하기 →</a>
+</div>
 
 <div class="footer">
   두산벤처다임 구내식당&nbsp;&nbsp;·&nbsp;&nbsp;
@@ -419,124 +242,115 @@
   // ── 날짜 표시 ──
   const DAYS = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
   const now = new Date();
+  const todayStr = now.getFullYear() +
+    String(now.getMonth()+1).padStart(2,'0') +
+    String(now.getDate()).padStart(2,'0');
   document.getElementById('today-date').textContent =
     `${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일 ${DAYS[now.getDay()]}`;
 
-  // ── 상태 요소 참조 ──
-  const $loading  = document.getElementById('loading-box');
-  const $imgBox   = document.getElementById('menu-img-box');
-  const $img      = document.getElementById('menu-img');
-  const $badge    = document.getElementById('fresh-badge');
-  const $fetchTime= document.getElementById('fetch-time');
-  const $error    = document.getElementById('error-notice');
-  const $fallback = document.getElementById('menu-fallback');
-  const $kcal     = document.getElementById('total-kcal');
+  // ── 섹션 그룹 정의 ──
+  const SECTIONS = [
+    { key: 'soup',            label: '국 / 찌개' },
+    { key: 'main',            label: '메인'       },
+    { key: ['side','kimchi'], label: '반찬'       },
+    { key: 'drink',           label: '음료'       },
+  ];
 
-  // ── UI 초기화 ──
-  function resetUI() {
-    $loading.style.display  = 'flex';
-    $imgBox.style.display   = 'none';
-    $badge.style.display    = 'none';
-    $error.style.display    = 'none';
-    $fallback.style.display = 'none';
-  }
+  // ── 메뉴 렌더링 ──
+  function renderMenu(data) {
+    const wrap    = document.getElementById('menu-wrap');
+    const content = document.getElementById('menu-content');
+    content.innerHTML = '';
 
-  // ── 카카오스토리에서 메뉴 이미지 URL 추출 ──
-  function extractImageUrl(html) {
-    // 1순위: og:image 메타태그 (카카오스토리 서버 렌더링 포함 여부에 따라 동작)
-    const patterns = [
-      /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i,
-      /<meta\s+content=["']([^"']+)["']\s+property=["']og:image["']/i,
-    ];
-    for (const pat of patterns) {
-      const m = html.match(pat);
-      if (m?.[1] && !m[1].includes('default')) return m[1];
-    }
-    // 2순위: Kakao CDN 이미지 URL
-    const cdnPat = /(https:\/\/img\.kakaocdn\.net\/[^\s"'<>]+\.(?:jpg|jpeg|png|webp))/i;
-    const cdn = html.match(cdnPat);
-    if (cdn?.[1]) return cdn[1];
-
-    // 3순위: JSON 내 imageUrl 패턴
-    const jsonPat = /"imageUrl"\s*:\s*"(https:\/\/[^"]+\.(?:jpg|jpeg|png|webp))"/i;
-    const json = html.match(jsonPat);
-    if (json?.[1]) return json[1];
-
-    return null;
-  }
-
-  // ── 성공: 이미지 표시 ──
-  function showImage(url) {
-    $loading.style.display = 'none';
-    $img.src = url;
-    $imgBox.style.display = 'block';
-    const t = new Date();
-    $fetchTime.textContent =
-      `카카오스토리에서 실시간 로드됨 · ${t.getHours()}:${String(t.getMinutes()).padStart(2,'0')} 기준`;
-    $badge.style.display = 'flex';
-  }
-
-  // ── 실패: 오류 + 폴백 메뉴 표시 ──
-  function showFallback() {
-    $loading.style.display  = 'none';
-    $error.style.display    = 'flex';
-    $fallback.style.display = 'block';
-    // 폴백 칼로리 합산
-    const total = [...document.querySelectorAll('.row[data-kcal]')]
-      .reduce((s, r) => s + (+r.dataset.kcal), 0);
-    $kcal.innerHTML = `${total.toLocaleString()}<span>kcal</span>`;
-  }
-
-  // ── 이미지 로드 실패 처리 ──
-  function onImgError() {
-    $imgBox.style.display = 'none';
-    $badge.style.display  = 'none';
-    showFallback();
-  }
-
-  // ── 카카오스토리 fetch (CORS 프록시 순차 시도) ──
-  async function loadMenuFromKakao() {
-    const TARGET = 'https://story.kakao.com/bebe41';
-    const PROXIES = [
-      u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,
-      u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
-      u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
-    ];
-
-    for (const makeUrl of PROXIES) {
-      try {
-        const controller = new AbortController();
-        const tid = setTimeout(() => controller.abort(), 9000);
-        const res = await fetch(makeUrl(TARGET), { signal: controller.signal });
-        clearTimeout(tid);
-        if (!res.ok) continue;
-
-        const ct = res.headers.get('content-type') || '';
-        const text = ct.includes('json')
-          ? (await res.json()).contents
-          : await res.text();
-
-        if (!text) continue;
-
-        const url = extractImageUrl(text);
-        if (url) { showImage(url); return; }
-      } catch (_) { /* 다음 프록시 시도 */ }
+    // 날짜 불일치 배너
+    if (data.date && data.date !== todayStr) {
+      document.getElementById('stale-banner').style.display = 'flex';
     }
 
-    // 모든 프록시 실패
-    showFallback();
+    // 운영 안내 메시지 업데이트
+    if (data.note) {
+      document.getElementById('time-note').textContent = '※ ' + data.note;
+    }
+
+    // 칼로리 합산
+    const total = (data.items || []).reduce((s, i) => s + (i.kcal || 0), 0);
+    document.getElementById('total-kcal').innerHTML = `${total.toLocaleString()}<span>kcal</span>`;
+
+    // 섹션별 렌더링
+    SECTIONS.forEach(sec => {
+      const keys = Array.isArray(sec.key) ? sec.key : [sec.key];
+      const items = (data.items || []).filter(i => keys.includes(i.category));
+      if (!items.length) return;
+
+      const sDiv = document.createElement('div');
+      sDiv.className = 'section';
+      sDiv.textContent = sec.label;
+      content.appendChild(sDiv);
+
+      const block = document.createElement('div');
+      block.className = 'block';
+
+      items.forEach(item => {
+        const tagClass = {
+          soup: 't-soup', main: 't-main',
+          side: 't-side', kimchi: 't-kimchi', drink: 't-drink'
+        }[item.category] || 't-side';
+
+        const row = document.createElement('div');
+        row.className = 'row';
+        row.dataset.kcal = item.kcal || 0;
+        row.innerHTML = `
+          <div class="thumb"><span class="fb">${item.emoji || '🍽️'}</span></div>
+          <div class="info">
+            <div class="name">${item.name}</div>
+            ${item.sub ? `<div class="sub">${item.sub}</div>` : ''}
+          </div>
+          <div class="right">
+            <div class="kcal">${item.kcal || '—'}<span>kcal</span></div>
+            <span class="tag ${tagClass}">${item.tag || sec.label}</span>
+          </div>`;
+        block.appendChild(row);
+      });
+
+      content.appendChild(block);
+    });
+
+    document.getElementById('loading-box').style.display = 'none';
+    wrap.style.display = 'flex';
+    wrap.style.flexDirection = 'column';
+    wrap.style.alignItems = 'center';
+    wrap.style.width = '100%';
+  }
+
+  // ── menu.json fetch ──
+  // GitHub Raw URL (CORS 허용) — 동일 레포의 menu.json을 매번 신선하게 읽음
+  const MENU_URL = 'https://raw.githubusercontent.com/Killerb-ai/menu/main/menu.json';
+
+  async function loadMenu() {
+    try {
+      const res = await fetch(MENU_URL + '?t=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('fetch failed');
+      const data = await res.json();
+      renderMenu(data);
+    } catch(e) {
+      document.getElementById('loading-box').style.display = 'none';
+      document.getElementById('error-box').style.display = 'block';
+    }
   }
 
   // ── 새로고침 버튼 ──
   function refresh() {
     const btn = document.getElementById('refresh-btn');
     btn.classList.add('spinning');
-    resetUI();
-    loadMenuFromKakao().finally(() => btn.classList.remove('spinning'));
+    document.getElementById('loading-box').style.display = 'flex';
+    document.getElementById('menu-wrap').style.display = 'none';
+    document.getElementById('error-box').style.display = 'none';
+    document.getElementById('stale-banner').style.display = 'none';
+    loadMenu().finally(() => btn.classList.remove('spinning'));
   }
 
-  // ── 페이지 접속 시 자동 실행 ──
-  loadMenuFromKakao();
+  // ── 접속 시 자동 실행 ──
+  loadMenu();
 </script>
 </body>
 </html>

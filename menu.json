@@ -1,0 +1,16 @@
+{
+  "date": "20260430",
+  "note": "오늘은 점심만 운영합니다 (4월 30일)",
+  "items": [
+    { "category": "soup",   "name": "새우젓김칫국",   "kcal": 70,  "emoji": "🍲", "tag": "국"   },
+    { "category": "main",   "name": "후라이드치킨",   "kcal": 390, "emoji": "🍗", "tag": "메인", "sub": "강정 소스" },
+    { "category": "main",   "name": "하이라이스",     "kcal": 420, "emoji": "🍛", "tag": "메인" },
+    { "category": "side",   "name": "비엔나야채볶음", "kcal": 130, "emoji": "🥩", "tag": "반찬" },
+    { "category": "side",   "name": "양배추샐러드",   "kcal": 75,  "emoji": "🥗", "tag": "반찬", "sub": "키위 드레싱" },
+    { "category": "side",   "name": "쑥갓매실무침",   "kcal": 35,  "emoji": "🥬", "tag": "반찬" },
+    { "category": "side",   "name": "단무지무침",     "kcal": 30,  "emoji": "🥬", "tag": "반찬" },
+    { "category": "kimchi", "name": "포기김치",       "kcal": 25,  "emoji": "🌶️", "tag": "김치" },
+    { "category": "drink",  "name": "복숭아홍차",     "kcal": 55,  "emoji": "🫖", "tag": "음료" },
+    { "category": "drink",  "name": "건빵튀김",       "kcal": 110, "emoji": "🍞", "tag": "후식" }
+  ]
+}
