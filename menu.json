@@ -1,12 +1,16 @@
 {
-  "date": "20260430",
-  "note": "점심만 운영합니다 (4월 30일, 11:10~14:20)",
+  "date": "20260519",
+  "note": "금요일은 점심만 운영합니다",
   "items": [
-    { "category": "soup",   "name": "곤약어묵국",          "kcal": 60,  "emoji": "🍲", "tag": "국" },
-    { "category": "main",   "name": "콩나물불고기",         "kcal": 280, "emoji": "🥩", "tag": "메인" },
-    { "category": "side",   "name": "감자고로케",           "kcal": 150, "emoji": "🥔", "tag": "반찬", "sub": "머스타드 소스" },
-    { "category": "side",   "name": "조미김구이",           "kcal": 30,  "emoji": "🌿", "tag": "반찬" },
-    { "category": "side",   "name": "양배추샐러드",         "kcal": 70,  "emoji": "🥗", "tag": "반찬", "sub": "흑임자 드레싱" },
-    { "category": "side",   "name": "오이생채",             "kcal": 25,  "emoji": "🥒", "tag": "반찬" }
+    { "category": "soup",   "name": "들깨미역국",         "kcal": 80,  "emoji": "🍲", "tag": "국" },
+    { "category": "main",   "name": "칠리돈육폭찹",       "kcal": 380, "emoji": "🍖", "tag": "메인" },
+    { "category": "main",   "name": "치킨너겟",           "kcal": 290, "emoji": "🍗", "tag": "메인", "sub": "유린기소스" },
+    { "category": "main",   "name": "가락국수",           "kcal": 200, "emoji": "🍝", "tag": "면" },
+    { "category": "side",   "name": "그린빈스어묵볶음",   "kcal": 85,  "emoji": "🥬", "tag": "반찬" },
+    { "category": "side",   "name": "양배추샐러드",       "kcal": 60,  "emoji": "🥗", "tag": "반찬", "sub": "키위드레싱" },
+    { "category": "side",   "name": "브로콜리유자무침",   "kcal": 45,  "emoji": "🥦", "tag": "반찬" },
+    { "category": "kimchi", "name": "양념깻잎지",         "kcal": 20,  "emoji": "🌶️", "tag": "김치" },
+    { "category": "kimchi", "name": "포기김치",           "kcal": 20,  "emoji": "🌶️", "tag": "김치" },
+    { "category": "drink",  "name": "식혜",               "kcal": 90,  "emoji": "🫖", "tag": "음료" }
   ]
 }
